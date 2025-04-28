@@ -1,0 +1,24 @@
+{
+  "name": "leetcode-practise",
+  "version": "1.0.0",
+  "description": "A project to practice LeetCode questions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "solution": "node run-solution.js",
+    "create": "node create-solution.js"
+  },
+  "keywords": [
+    "leetcode",
+    "algorithms",
+    "data-structures",
+    "practice"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
