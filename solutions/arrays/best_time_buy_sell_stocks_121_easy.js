@@ -30,10 +30,44 @@ Constraints:
  * @param {*} - Add parameter types based on the problem
  * @return {*} - Add return type based on the problem
  */
-function best_time_buy_sell_stocks_121_easy() {
-  // TODO: Implement your solution here
-  
-  return null;
+function best_time_buy_sell_stocks_121_easy(nums) {
+  let buyIdx = 0,
+    sellIdx = 0;
+
+  let maxProfit = 0;
+
+  let currProfit = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    const currentDayPrice = nums[i];
+
+    const buyDayPrice = nums[buyIdx];
+
+    const sellDayePrice = nums[sellIdx];
+
+    if (currentDayPrice < buyDayPrice) {
+      currProfit = sellDayePrice - buyDayPrice;
+      if (currProfit > maxProfit) {
+        maxProfit = currProfit;
+      }
+      buyIdx = i;
+      sellIdx = i;
+    } else if (currentDayPrice > sellDayePrice) {
+      currProfit = currentDayPrice - buyDayPrice;
+      if (currProfit > maxProfit) {
+        maxProfit = currProfit;
+      }
+      sellIdx = i;
+    }
+  }
+
+  if (buyIdx > sellIdx) {
+    return 0;
+  }
+
+  return maxProfit;
 }
+
+console.log(best_time_buy_sell_stocks_121_easy([7, 1, 5, 3, 6, 4]));
 
 module.exports = best_time_buy_sell_stocks_121_easy;
